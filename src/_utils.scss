@@ -1,0 +1,39 @@
+@mixin respond($tamanho) {
+    // respond é o nome padrão que o pessoal dá
+
+    @if $tamanho == small {
+        @media all and (max-width: 30em) {
+            // O content irá colocar tudo o que adicionarmos no mixin
+            @content;
+        }
+    } @else if $tamanho == medium {
+        @media all and (max-width: 47.93em) {
+            @content;
+        }
+    } @else if $tamanho == big {
+        @media all and (max-width: 80em) {
+            @content;
+        }
+    }
+}
+
+%pipula {
+    color: cyan;
+    font-family: "Space Grotesk", sans-serif;
+    padding: 1rem;
+    border-radius: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    background: linear-gradient(#1a1a1a, #1a1a1a),
+        linear-gradient(95deg, #00ffff, #8a2be2, #00ffff);
+    background-size: 300% 100%;
+    background-position: 0%;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+
+    &:hover {
+        animation: shadow 2s linear infinite;
+    }
+}

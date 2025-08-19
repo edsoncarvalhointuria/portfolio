@@ -1,0 +1,59 @@
+$filter-bg-color: rgba(10, 25, 47, 0.7);
+$filter-border-color: rgba(0, 255, 255, 0.2);
+$filter-active-color: rgba(0, 255, 255, 1);
+
+.project-filters {
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    translate: -50% 0;
+    max-width: 70vw;
+
+    z-index: 100;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: $filter-bg-color;
+    backdrop-filter: blur(5px);
+    border: 1px solid $filter-border-color;
+    border-radius: 5rem;
+
+    &--mobile {
+        max-width: 95vw;
+    }
+
+    &__container {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__button {
+        background: none;
+        border: none;
+        padding: 1rem 2rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        border-radius: 3rem;
+        transition: all 0.3s ease-out;
+        text-wrap: nowrap;
+        order: 1;
+
+        &:hover {
+            color: white;
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+
+        &--active {
+            color: black;
+            background-color: $filter-active-color;
+            order: 0;
+        }
+    }
+}

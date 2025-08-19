@@ -1,0 +1,47 @@
+$cor-fundo: rgba(255, 255, 255, 0.2);
+.social-media {
+    $base: &;
+
+    display: grid;
+    gap: 1rem;
+    position: fixed;
+    left: -6rem;
+    bottom: 1rem;
+    background-color: $cor-fundo;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 0.5rem;
+    transition: all ease-in-out 0.3s;
+
+    &__links {
+        width: 5rem;
+    }
+
+    &__seta {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(100%, -50%);
+        width: 0;
+        height: 0;
+        border-top: 3rem solid transparent;
+        border-bottom: 3rem solid transparent;
+        border-left: 0.7rem solid $cor-fundo;
+
+        transition: opacity ease 0.3s 0.3s, all ease 0.1s;
+    }
+
+    &__hover {
+        position: absolute;
+        right: -40%;
+        width: 3rem;
+        height: 100%;
+    }
+
+    &--show {
+        left: 0;
+        #{$base}__seta {
+            border-left: 0rem;
+        }
+    }
+}

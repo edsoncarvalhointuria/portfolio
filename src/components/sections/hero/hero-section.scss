@@ -1,0 +1,103 @@
+.hero {
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: 100dvw;
+    user-select: none;
+
+    & canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__container {
+        z-index: 1;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        place-content: center;
+        gap: 2rem;
+        pointer-events: none;
+    }
+
+    &__h1 {
+        text-transform: capitalize;
+        font-size: clamp(2rem, 5vw, 7rem);
+        font-weight: 700;
+        display: flex;
+        flex-wrap: nowrap;
+        text-shadow: 1px 0 2px rgb(0, 0, 0), 0px 1px 2px rgb(0, 0, 0),
+            -1px 0 2px rgb(0, 0, 0), 0px -1px 2px rgb(0, 0, 0);
+        gap: 0.3rem;
+
+        & span {
+            display: inline-block;
+            min-width: 1rem;
+        }
+    }
+
+    &__text {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.8);
+        text-shadow: 1px 0 2px rgb(0, 0, 0), 0px 1px 2px rgb(0, 0, 0),
+            -1px 0 2px rgb(0, 0, 0), 0px -1px 2px rgb(0, 0, 0);
+    }
+
+    &__button {
+        -webkit-tap-highlight-color: transparent;
+        font-family: "Space Grotesk", sans-serif;
+        padding: 1.5rem 2rem;
+        background: rgba($color: #000000, $alpha: 0.8);
+        color: rgba(255, 255, 255, 0.8);
+        border: 1px rgba(255, 255, 255, 0.5) solid;
+        cursor: pointer;
+        pointer-events: auto;
+        box-shadow: 0 0 20px 2px white;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 40%;
+                height: 100%;
+
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0.8) 50%,
+                    rgba(255, 255, 255, 0.1) 100%
+                );
+
+                transform: skewX(-30deg);
+                animation: shine 2s ease-in-out forwards;
+                z-index: 1;
+            }
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        font-family: inherit;
+    }
+}
+
+@keyframes shine {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 150%;
+    }
+}

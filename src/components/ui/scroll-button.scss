@@ -1,0 +1,21 @@
+.scroll-button {
+    background: none;
+    border: none;
+    position: fixed;
+
+    right: 2rem;
+    bottom: 3rem;
+    border-radius: 1rem;
+    outline: none;
+    cursor: pointer;
+    z-index: 10;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+
+    & svg {
+        pointer-events: none;
+        width: 4rem;
+    }
+}

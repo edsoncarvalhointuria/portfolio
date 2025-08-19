@@ -1,0 +1,57 @@
+# Nome do nosso fluxo de trabalho
+name: Deploy Portfolio to GitHub Pages
+
+on:
+    # Roda sempre que você fizer um push para a branch 'main'
+    push:
+        branches: ["main"]
+
+    # Permite que você rode este fluxo manualmente pela aba Actions
+    workflow_dispatch:
+
+# Define as permissões que o nosso "robô" terá para publicar
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+jobs:
+    # O trabalho de build, que prepara o site
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout do código 🛎️
+              uses: actions/checkout@v4
+
+            - name: Configurar Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Instalar dependências 📦
+              run: npm install
+
+            - name: Construir o projeto 🔧
+              run: npm run build
+
+            - name: Configurar GitHub Pages
+              uses: actions/configure-pages@v4
+
+            - name: Fazer upload do artefato 🚀
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  # Faz o upload da pasta 'dist' que o Vite criou
+                  path: "./dist"
+
+    # O trabalho de deploy, que coloca o site no ar
+    deploy:
+        needs: build # Só roda DEPOIS que o 'build' terminar com sucesso
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy para o GitHub Pages 🚀
+              id: deployment
+              uses: actions/deploy-pages@v4
