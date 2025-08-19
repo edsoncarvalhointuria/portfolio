@@ -70,7 +70,7 @@ class Particle {
                 this.y += diffY * 0.1;
 
                 this.x += orientationX * 0.3;
-                this.y += orientationY * 0.3;
+                this.y += orientationY > 0 ? 0 : orientationY * 0.3;
             }
         } else {
             const alvoX = this.localCollapseX;

@@ -39,8 +39,6 @@ function ProjectModal({
     isModal: RefObject<boolean>;
     setShowFilters: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-    const [isVideoLoading, setIsVideoLoading] = useState(true);
-
     const stopTouch = (evt: TouchEvent) => {
         evt.preventDefault();
     };
@@ -81,18 +79,18 @@ function ProjectModal({
 
             <div className="projeto-modal__body">
                 <div
-                    className={`projeto-modal__body-video ${
-                        isVideoLoading
-                            ? "projeto-modal__body-video--spinner"
-                            : ""
-                    }`}
+                    className={`projeto-modal__body-video projeto-modal__body-video--spinner`}
                 >
                     <video
                         muted
                         autoPlay
                         loop
                         src={project.video}
-                        onCanPlay={() => setIsVideoLoading(false)}
+                        onCanPlay={(evt) =>
+                            evt.currentTarget.parentElement?.classList.remove(
+                                "projeto-modal__body-video--spinner"
+                            )
+                        }
                     />
                 </div>
                 <div className="projeto-modal__body-description">

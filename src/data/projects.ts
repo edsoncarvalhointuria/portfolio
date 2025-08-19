@@ -373,8 +373,6 @@ export const projects: Project[] = p.map((v, i) => ({
     id: i + 1,
 })) as Project[];
 
-console.log(projects);
-
 export const categorias: ProjectCategory[] = [
     "javascript",
     "python",

@@ -23,7 +23,7 @@ function SocialMedia() {
             onClick={() => setShow(true)}
         >
             <div className="social-media__links">
-                <a href="#">
+                <a href="https://github.com/edsoncarvalhointuria">
                     <img
                         src={`./github${
                             !intro ? "-hover" : ""
@@ -32,7 +32,7 @@ function SocialMedia() {
                         onMouseOver={() => setGithubKey((v) => v + 1)}
                     />
                 </a>
-                <a href="#">
+                <a href="https://www.linkedin.com/in/edson-carvalho-inturia">
                     <img
                         src={`./linkedin${
                             !intro ? "-hover" : ""
