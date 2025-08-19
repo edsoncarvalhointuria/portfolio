@@ -1,5 +1,5 @@
 import { motion, stagger, type Variants } from "framer-motion";
-import { useState, type RefObject } from "react";
+import { type RefObject } from "react";
 import { isMobileDevice } from "../../../utils/device";
 import type { Project } from "../../../data/projects";
 
