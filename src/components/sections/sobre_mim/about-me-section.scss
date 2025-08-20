@@ -15,7 +15,7 @@
 
     @include respond(medium) {
         flex-direction: column;
-        padding: 10rem 5rem;
+        padding: 5rem;
     }
 
     &__imagem {

@@ -23,7 +23,10 @@ function SocialMedia() {
             onClick={() => setShow(true)}
         >
             <div className="social-media__links">
-                <a href="https://github.com/edsoncarvalhointuria">
+                <a
+                    href="https://github.com/edsoncarvalhointuria"
+                    target="_blank"
+                >
                     <img
                         src={`./github${
                             !intro ? "-hover" : ""
@@ -32,7 +35,10 @@ function SocialMedia() {
                         onMouseOver={() => setGithubKey((v) => v + 1)}
                     />
                 </a>
-                <a href="https://www.linkedin.com/in/edson-carvalho-inturia">
+                <a
+                    href="https://www.linkedin.com/in/edson-carvalho-inturia"
+                    target="_blank"
+                >
                     <img
                         src={`./linkedin${
                             !intro ? "-hover" : ""
