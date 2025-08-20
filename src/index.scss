@@ -32,7 +32,6 @@ html {
 
 body {
     background-color: black;
-    scroll-behavior: smooth;
     font-size: 1.4rem;
     font-family: "Inter", sans-serif;
     color: white;
@@ -40,6 +39,7 @@ body {
 
 html,
 body {
+    scroll-behavior: smooth;
     max-width: 100vw;
     overflow-x: hidden;
 }

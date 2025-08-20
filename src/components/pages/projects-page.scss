@@ -179,25 +179,25 @@ $header-bg-color: rgba(0, 0, 0, 0.2);
                 top: 50%;
                 left: 50%;
                 width: 80%;
-                height: 2px;
+                height: 1.9px;
                 background-color: rgba(0, 0, 0, 0.6);
                 border-radius: 1px;
-                opacity: 0;
+                opacity: 1;
                 transition: all 0.2s ease;
-                transform: translate(-50%, -50%);
+            }
+            &::before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &::after {
+                transform: translate(-50%, -50%) rotate(-45deg);
             }
 
             &:hover {
                 background-color: darken(#ff5f56, 30%);
+
                 &::before,
                 &::after {
-                    opacity: 1;
-                }
-                &::before {
-                    transform: translate(-50%, -50%) rotate(45deg);
-                }
-                &::after {
-                    transform: translate(-50%, -50%) rotate(-45deg);
+                    transform: translate(-50%, -50%) rotate(0deg);
                 }
             }
         }

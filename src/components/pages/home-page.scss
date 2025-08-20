@@ -1,0 +1,14 @@
+.home-page {
+    scroll-snap-type: y mandatory;
+
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    & .hero {
+        scroll-snap-align: start;
+    }
+
+    & .sobre-mim {
+        scroll-snap-align: end;
+    }
+}

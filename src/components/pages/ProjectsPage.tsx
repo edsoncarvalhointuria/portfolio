@@ -136,6 +136,9 @@ function ProjectsPage() {
                                         setShowProjeto(v);
                                         setShowFilters(false);
                                         isModal.current = true;
+                                    } else {
+                                        setShowProjeto(null);
+                                        isModal.current = false;
                                     }
                                 }}
                                 layoutId={`project-card-${v.id}`}

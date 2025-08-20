@@ -55,12 +55,12 @@ function AboutMeSection() {
     };
 
     return (
-        <motion.section
+        <motion.div
             className="sobre-mim"
             variants={variantsVisible}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.8 }}
             ref={$sobre_mim}
         >
             <motion.div
@@ -110,7 +110,7 @@ function AboutMeSection() {
                     ))}
                 </motion.ul>
             </motion.div>
-        </motion.section>
+        </motion.div>
     );
 }
 
