@@ -1,5 +1,7 @@
 # 🚀 Portfólio Interativo de Edson Carvalho Inturia
 
+![Adobe Express - Vídeo sem título ‐ Feito com o Clipchamp (1)](https://github.com/user-attachments/assets/69f049f3-9490-4562-87c7-2268356d9810)
+
 ---
 
 ### ✨ Sobre o Projeto
