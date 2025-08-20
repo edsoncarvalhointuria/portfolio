@@ -12,11 +12,13 @@ import {
     type Project,
     type ProjectCategory,
 } from "../../data/projects";
+import Conquista from "../ui/Conquista";
 
 function ProjectsPage() {
     const [showGallery, setShowGallery] = useState(false);
     const [showProjeto, setShowProjeto] = useState<Project | null>(null);
     const [showFilters, setShowFilters] = useState(true);
+    const [showConquista, setShowConquista] = useState(false);
     const [projectsState, setProjectsState] = useState<Project[]>([]);
     const [categoria, setCategoria] = useState<ProjectCategory | null>(null);
     const [tags, setTags] = useState<string[]>([]);
@@ -26,6 +28,7 @@ function ProjectsPage() {
     const lastScroll = useRef(0);
     const showFiltersRef = useRef(showFilters);
     const isModal = useRef(false);
+    const idTimeout = useRef(0);
 
     const { collapse, resetCollapse } = useParticleContext();
 
@@ -34,6 +37,12 @@ function ProjectsPage() {
         [categoria, projects]
     );
 
+    useEffect(() => {
+        if (showConquista)
+            idTimeout.current = setTimeout(() => setShowConquista(false), 2000);
+
+        return () => clearTimeout(idTimeout.current);
+    }, [showConquista]);
     useEffect(() => {
         if (!tagsAtivas.length) {
             setProjectsState(projectsMemo);
@@ -136,6 +145,8 @@ function ProjectsPage() {
                                         setShowProjeto(v);
                                         setShowFilters(false);
                                         isModal.current = true;
+                                        if (v.title === "Portfólio (Antigo)")
+                                            setShowConquista(true);
                                     } else {
                                         setShowProjeto(null);
                                         isModal.current = false;
@@ -162,6 +173,9 @@ function ProjectsPage() {
                     </AnimatePresence>
                 </>
             )}
+            <AnimatePresence>
+                {showConquista && <Conquista key="conquista" />}
+            </AnimatePresence>
         </motion.section>
     );
 }

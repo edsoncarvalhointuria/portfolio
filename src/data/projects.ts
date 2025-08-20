@@ -51,6 +51,18 @@ const p = [
     },
     {
         id: 1,
+        title: "Portfólio",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755665411/portfolio_e9z5tt.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755665347/V%C3%ADdeo_sem_t%C3%ADtulo_Feito_com_o_Clipchamp_2_qylmev.mp4",
+        description:
+            "Sim, você está no lugar certo. Este é o portfólio, dentro do portfólio. Se o seu cérebro ainda não deu RangeError: Maximum call stack size exceeded, sinta-se à vontade para explorar como esta experiência interativa foi construída.",
+        tags: ["React", "TypeScript", "Framer Motion", "Canvas", "SASS"],
+        liveUrl: "https://edsoncarvalhointuria.github.io/portfolio/",
+        githubUrl: "https://github.com/edsoncarvalhointuria/portfolio",
+    },
+    {
+        id: 1,
         title: "Pong (TypeScript Puro)",
         category: "javascript",
         image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755372669/pong-ts_y17thp.png",
@@ -99,6 +111,18 @@ const p = [
         liveUrl: "https://cerulean-puffpuff-3157f8.netlify.app/",
         githubUrl:
             "https://github.com/edsoncarvalhointuria/Projetos-Curso-HTML-CSS-JS/tree/main/hash-forms",
+    },
+    {
+        id: 1,
+        title: "Portfólio (Antigo)",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755703352/portfolio-antigo_rgdrr6.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755708063/portfolio-antigo_Feito_com_o_Clipchamp_unfwgu.mp4",
+        description:
+            "Este foi o meu portfólio inicial, onde subi os primeiros níveis em design de UI e animação com React e JS Vanilla. Quer ver a versão 'level up' da jornada? Você já está nela!.",
+        tags: ["React", "SASS"],
+        liveUrl: "https://edsoncarvalhointuria.github.io/portfolio-antigo/",
+        githubUrl: "https://github.com/edsoncarvalhointuria/portfolio-antigo",
     },
 
     // === Python ===
