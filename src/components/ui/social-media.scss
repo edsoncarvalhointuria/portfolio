@@ -12,6 +12,7 @@ $cor-fundo: rgba(255, 255, 255, 0.2);
     border-bottom-right-radius: 1rem;
     padding: 0.5rem;
     transition: all ease-in-out 0.3s;
+    z-index: 30;
 
     &__links {
         width: 5rem;

@@ -65,7 +65,7 @@ function HomePage() {
             ref={$home}
             className="home-page"
         >
-            <HeroSection />
+            <HeroSection home={$home} />
             <AboutMeSection />
         </motion.section>
     );

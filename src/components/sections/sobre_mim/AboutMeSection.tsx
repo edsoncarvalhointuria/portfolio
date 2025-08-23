@@ -1,6 +1,7 @@
 import { motion, stagger, type Variants } from "framer-motion";
 import "./about-me-section.scss";
 import { useRef } from "react";
+import { isMobileDevice } from "../../../utils/device";
 
 function AboutMeSection() {
     const HABILIDADES = [
@@ -74,7 +75,7 @@ function AboutMeSection() {
                 className="sobre-mim__imagem"
                 dragConstraints={$sobre_mim}
                 dragSnapToOrigin={true}
-                drag={true}
+                drag={!isMobileDevice()}
             >
                 <img
                     src="./EDSON_IMG.jpg"

@@ -1,0 +1,17 @@
+.coach-hind {
+    position: absolute;
+    z-index: 20;
+    width: 100dvw;
+    height: 100dvh;
+    // background-color: rgba(0, 0, 0, 0.9);
+    z-index: 5;
+    &--hand {
+        position: absolute;
+        translate: -50% -50%;
+        & svg {
+            width: 4rem;
+            height: 5rem;
+            filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.8));
+        }
+    }
+}

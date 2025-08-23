@@ -16,12 +16,14 @@ function Filters({
     setTagsAtivas,
     tagsAtivas,
     tags,
+    setPaginaAtual,
 }: {
     categoria: string | null;
     setCategoria: React.Dispatch<React.SetStateAction<ProjectCategory | null>>;
     setTagsAtivas: React.Dispatch<React.SetStateAction<string[]>>;
     tagsAtivas: string[];
     tags: string[];
+    setPaginaAtual: React.Dispatch<React.SetStateAction<number>>;
 }) {
     const [width, setWidth] = useState(100);
 
@@ -73,6 +75,34 @@ function Filters({
                     {tags.map((v, i) => (
                         <motion.button
                             key={v + i}
+                            whileHover={{
+                                color: "rgb(255,255,255)",
+                                backgroundColor: "rgba(0, 255, 255, 0.1)",
+                            }}
+                            initial={
+                                !tagsAtivas.includes(v)
+                                    ? {
+                                          color: "rgba(255, 255, 255, 0.7)",
+                                          backgroundColor: "none",
+                                      }
+                                    : {
+                                          color: "rgb(0,0,0)",
+                                          backgroundColor:
+                                              "rgba(0, 255, 255, 1)",
+                                      }
+                            }
+                            animate={
+                                !tagsAtivas.includes(v)
+                                    ? {
+                                          color: "rgba(255, 255, 255, 0.7)",
+                                          backgroundColor: "none",
+                                      }
+                                    : {
+                                          color: "rgb(0,0,0)",
+                                          backgroundColor:
+                                              "rgba(0, 255, 255, 1)",
+                                      }
+                            }
                             layout
                             onTap={() => {
                                 setTagsAtivas((ta) => {
@@ -87,6 +117,7 @@ function Filters({
 
                                     return tagsAtivasCopy;
                                 });
+                                setPaginaAtual(0);
                             }}
                             className={`project-filters__button ${
                                 tagsAtivas.includes(v)

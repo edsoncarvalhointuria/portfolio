@@ -38,22 +38,21 @@ $filter-active-color: rgba(0, 255, 255, 1);
         padding: 1rem 2rem;
         font-family: "Space Grotesk", sans-serif;
         font-size: 1.6rem;
-        color: rgba(255, 255, 255, 0.7);
         cursor: pointer;
         border-radius: 3rem;
         transition: all 0.3s ease-out;
         text-wrap: nowrap;
         order: 1;
 
-        &:hover {
-            color: white;
-            background-color: rgba(0, 255, 255, 0.1);
-        }
+        // &:hover {
+        //     color: white;
+        //     background-color: rgba(0, 255, 255, 0.1);
+        // }
 
-        &--active {
-            color: black;
-            background-color: $filter-active-color;
-            order: 0;
-        }
+        // &--active {
+        //     color: black;
+        //     background-color: $filter-active-color;
+        //     order: 0;
+        // }
     }
 }

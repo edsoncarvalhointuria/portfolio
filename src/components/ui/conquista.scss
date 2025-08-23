@@ -6,14 +6,10 @@ $conquista-border-color: rgba(0, 255, 255, 0.3);
 $conquista-glow-color: rgba(0, 255, 255, 0.5);
 
 .conquista {
-    // --- Posicionamento ---
     position: fixed;
-    // Começa fora da tela, à esquerda
     left: -0%;
     top: 3rem;
-    z-index: 2000; // Garante que fique na frente de tudo
-
-    // --- Estilo "Vidro Fumado" ---
+    z-index: 1000;
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -22,24 +18,20 @@ $conquista-glow-color: rgba(0, 255, 255, 0.5);
     background-color: $conquista-bg-color;
     backdrop-filter: blur(10px);
     border: 1px solid $conquista-border-color;
-    border-left: none; // Remove a borda esquerda para um visual mais limpo
+    border-left: none;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
 
-    // --- Brilho e Sombra ---
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
 
-    // --- Ícone ---
     &__img {
         svg {
             width: 5rem;
             height: 5rem;
-            // Um brilho sutil no ícone
             filter: drop-shadow(0 0 5px $conquista-glow-color);
         }
     }
 
-    // --- Textos ---
     &__infos {
         display: flex;
         flex-direction: column;
@@ -50,7 +42,7 @@ $conquista-glow-color: rgba(0, 255, 255, 0.5);
             font-family: "Space Grotesk", sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
-            color: $conquista-glow-color; // Cor de destaque para o título
+            color: $conquista-glow-color;
         }
 
         &--desc {

@@ -24,6 +24,17 @@
         place-content: center;
         gap: 2rem;
         pointer-events: none;
+
+        transition: all ease 0.3s;
+        &--hint {
+            &::after {
+                pointer-events: none;
+                content: "";
+                inset: 0;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+        }
     }
 
     &__h1 {
@@ -63,7 +74,7 @@
         font-weight: bold;
         position: relative;
         overflow: hidden;
-
+        z-index: 5;
         &:hover {
             &::after {
                 content: "";

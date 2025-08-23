@@ -13,8 +13,11 @@ import {
     type ProjectCategory,
 } from "../../data/projects";
 import Conquista from "../ui/Conquista";
+import { isMobileDevice } from "../../utils/device";
+import Paginacao from "../ui/Paginacao";
 
 function ProjectsPage() {
+    const QTD_PAGINA = isMobileDevice() ? 9 : 9;
     const [showGallery, setShowGallery] = useState(false);
     const [showProjeto, setShowProjeto] = useState<Project | null>(null);
     const [showFilters, setShowFilters] = useState(true);
@@ -23,6 +26,8 @@ function ProjectsPage() {
     const [categoria, setCategoria] = useState<ProjectCategory | null>(null);
     const [tags, setTags] = useState<string[]>([]);
     const [tagsAtivas, setTagsAtivas] = useState<string[]>([]);
+    const [paginaAtual, setPaginaAtual] = useState(0);
+    const [totalPaginas, setTotalPaginas] = useState(1);
 
     const $galeria = useRef<HTMLDivElement>(null);
     const lastScroll = useRef(0);
@@ -45,14 +50,26 @@ function ProjectsPage() {
     }, [showConquista]);
     useEffect(() => {
         if (!tagsAtivas.length) {
-            setProjectsState(projectsMemo);
+            setProjectsState(() => {
+                const indiceInicial = paginaAtual * QTD_PAGINA;
+                const p = projectsMemo.slice(
+                    indiceInicial,
+                    indiceInicial + QTD_PAGINA
+                );
+                return p;
+            });
+            setTotalPaginas(Math.ceil(projectsMemo.length / QTD_PAGINA));
             return;
         }
+        const indiceInicial = paginaAtual * QTD_PAGINA;
         const filtro = projectsMemo.filter((p) =>
             tagsAtivas.find((c) => p.tags.includes(c))
         );
-        setProjectsState(filtro);
-    }, [tagsAtivas]);
+        setTotalPaginas(Math.ceil(filtro.length / QTD_PAGINA));
+        setProjectsState(
+            filtro.slice(indiceInicial, indiceInicial + QTD_PAGINA)
+        );
+    }, [tagsAtivas, paginaAtual]);
     useEffect(() => {
         setTagsAtivas([]);
         const primeiros = ["React", "Angular", "TypeScrit", "Django", "Flask"];
@@ -62,6 +79,8 @@ function ProjectsPage() {
                 (v) => (primeiros.includes(v) ? -1 : 1)
             )
         );
+
+        setPaginaAtual(0);
     }, [projectsMemo]);
     useEffect(() => {
         if (collapse.x && collapse.y) {
@@ -124,6 +143,7 @@ function ProjectsPage() {
                                 tags={tags}
                                 tagsAtivas={tagsAtivas}
                                 key={"project-filters"}
+                                setPaginaAtual={setPaginaAtual}
                             />
                         )}
                     </AnimatePresence>
@@ -161,6 +181,13 @@ function ProjectsPage() {
                             />
                         ))}
                     </AnimatePresence>
+                    {!showProjeto && (
+                        <Paginacao
+                            paginaAtual={paginaAtual}
+                            setPaginaAtual={setPaginaAtual}
+                            totalPaginas={totalPaginas}
+                        />
+                    )}{" "}
                 </div>
             ) : (
                 <>

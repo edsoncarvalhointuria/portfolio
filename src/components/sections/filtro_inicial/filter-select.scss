@@ -74,4 +74,16 @@
             }
         }
     }
+
+    &--hint {
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 30;
+            height: 100dvh;
+            width: 100dvw;
+            transform: -50% -50%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
 }

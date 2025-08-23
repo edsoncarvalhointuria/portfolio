@@ -1,5 +1,5 @@
 import { motion, stagger, type Variants } from "framer-motion";
-import { useState } from "react";
+import { useState, type RefObject } from "react";
 import { useParticleContext } from "../../../contexts/ParticleContext";
 import type { ProjectCategory } from "../../../data/projects";
 import { isMobileDevice } from "../../../utils/device";
@@ -7,7 +7,13 @@ const variantsCard: Variants = {
     hidden: {
         transition: { delayChildren: stagger(0.05, { from: "last" }) },
     },
-    visible: { transition: { delayChildren: stagger(0.2) } },
+    visible: (isHint: boolean) => {
+        if (isHint)
+            return {
+                scale: 0.8,
+            };
+        return { scale: 1, transition: { delayChildren: stagger(0.2) } };
+    },
     exit: {
         scale: 0,
         y: 50,

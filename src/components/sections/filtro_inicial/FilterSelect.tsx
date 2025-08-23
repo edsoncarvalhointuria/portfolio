@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, stagger, type Variants } from "framer-motion";
 import NodeIcon from "../../ui/icons/NodeIcon";
 import AngularIcon from "../../ui/icons/AngularIcon";
@@ -15,6 +15,8 @@ import HtmlIcon from "../../ui/icons/HtmlIcon";
 import "./filter-select.scss";
 import type { ProjectCategory } from "../../../data/projects";
 import SassIcon from "../../ui/icons/SassIcon";
+import CoachHind from "../../ui/CoachHind";
+import { getCookie, setCookie } from "../../../utils/cookie";
 
 const variantsContainer = {
     exit: {
@@ -25,6 +27,15 @@ const variantsContainer = {
 };
 
 const variantsCard: Variants = {
+    visible: (showHint: boolean) => {
+        if (showHint)
+            return {
+                zIndex: 31,
+                scale: [1, 1, 1, 0.8, 1],
+                transition: { duration: 2 },
+            };
+        return { scale: 1 };
+    },
     exit: {
         scale: 0,
         transition: { duration: 0.4 },
@@ -39,7 +50,8 @@ function FilterSelect({
     galeria: React.RefObject<HTMLDivElement | null>;
 }) {
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-    document.documentElement.classList.add("projects-page-overflow");
+    const [showHint, setShowHint] = useState(false);
+    const $card = useRef<HTMLImageElement>(null);
     const filtros: {
         type: string;
         icons: React.ComponentType<any>[];
@@ -61,36 +73,56 @@ function FilterSelect({
             name: "html-css",
         },
     ];
+
+    useEffect(() => {
+        if (getCookie("showHintFilters")) return;
+
+        setTimeout(() => {
+            setCookie("showHintFilters", "true", 1);
+            setShowHint(true);
+        }, 1500);
+    }, []);
+
+    document.documentElement.classList.add("projects-page-overflow");
     return (
-        <motion.div
-            className="filtro-inicial"
-            variants={variantsContainer}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-        >
-            {filtros.map((v, i) => {
-                return (
-                    <motion.div
-                        drag={true}
-                        whileDrag={{ cursor: "grabbing" }}
-                        dragConstraints={galeria}
-                        key={v.type + i}
-                        variants={variantsCard}
-                    >
-                        <FilterCard
-                            filtro={v.type}
-                            icons={v.icons}
-                            index={i}
-                            name={v.name}
-                            hoverIndex={hoverIndex}
-                            setHoverIndex={setHoverIndex}
-                            setFiltro={setFiltro}
-                        />
-                    </motion.div>
-                );
-            })}
-        </motion.div>
+        <>
+            <motion.div
+                className={`filtro-inicial ${
+                    showHint ? "filtro-inicial--hint" : ""
+                }`}
+                variants={variantsContainer}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+            >
+                {filtros.map((v, i) => {
+                    return (
+                        <motion.div
+                            drag={true}
+                            whileDrag={{ cursor: "grabbing" }}
+                            dragConstraints={galeria}
+                            key={v.type + i}
+                            variants={variantsCard}
+                            custom={showHint && i === 1}
+                            ref={i === 1 ? $card : null}
+                        >
+                            <FilterCard
+                                filtro={v.type}
+                                icons={v.icons}
+                                index={i}
+                                name={v.name}
+                                hoverIndex={hoverIndex}
+                                setHoverIndex={setHoverIndex}
+                                setFiltro={setFiltro}
+                            />
+                        </motion.div>
+                    );
+                })}
+            </motion.div>
+            {showHint && (
+                <CoachHind clickRef={$card} setShowHint={setShowHint} />
+            )}
+        </>
     );
 }
 
