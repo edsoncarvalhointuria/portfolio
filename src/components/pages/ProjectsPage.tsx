@@ -39,7 +39,7 @@ function ProjectsPage() {
 
     useEffect(() => {
         if (showConquista)
-            idTimeout.current = setTimeout(() => setShowConquista(false), 2000);
+            idTimeout.current = setTimeout(() => setShowConquista(false), 3000);
 
         return () => clearTimeout(idTimeout.current);
     }, [showConquista]);
@@ -55,7 +55,13 @@ function ProjectsPage() {
     }, [tagsAtivas]);
     useEffect(() => {
         setTagsAtivas([]);
-        setTags(Array.from(new Set(projectsMemo.map((v) => v.tags).flat())));
+        const primeiros = ["React", "Angular", "TypeScrit", "Django", "Flask"];
+
+        setTags(
+            Array.from(new Set(projectsMemo.map((v) => v.tags).flat())).sort(
+                (v) => (primeiros.includes(v) ? -1 : 1)
+            )
+        );
     }, [projectsMemo]);
     useEffect(() => {
         if (collapse.x && collapse.y) {
@@ -91,7 +97,6 @@ function ProjectsPage() {
             current.tags.forEach((v) => {
                 if (!prev.includes(v)) prev.push(v);
             });
-
             return prev;
         }, [] as string[]);
 

@@ -46,14 +46,14 @@ function FilterSelect({
         name: ProjectCategory;
     }[] = [
         {
-            type: "Aplicações Web",
-            icons: [NodeIcon, AngularIcon, PostgreeIcon, ReactIcon],
-            name: "javascript",
-        },
-        {
             type: "Python",
             icons: [DjangoIcon, PythonIcon, StreamlitIcon, FlaskIcon],
             name: "python",
+        },
+        {
+            type: "Aplicações Web",
+            icons: [NodeIcon, AngularIcon, PostgreeIcon, ReactIcon],
+            name: "javascript",
         },
         {
             type: "JavaScript, HTML & CSS",

@@ -13,7 +13,7 @@ function HeroSection() {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { delayChildren: stagger(0.07) },
+            transition: { delayChildren: stagger(0.04) },
         },
     };
 

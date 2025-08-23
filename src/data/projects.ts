@@ -40,14 +40,25 @@ const p = [
             "Node.js",
             "Express",
             "PostgreSQL",
-            "Supabase",
-            "Render",
             "SASS",
         ],
         liveUrl:
             "https://edsoncarvalhointuria.github.io/react-fullstack-fake-reserva/",
         githubUrl:
             "https://github.com/edsoncarvalhointuria/react-fullstack-fake-reserva.git",
+    },
+    {
+        id: 1,
+        title: "Memoteca",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755921307/memoteca_x4tw4k.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755921411/angular-memoteca_Feito_com_o_Clipchamp_dpuweb.mp4",
+        description:
+            "Este projeto é uma aplicação de mural de pensamentos ('Memoteca'), desenvolvido como um estudo aprofundado do framework Angular. O objetivo foi construir uma aplicação CRUD (Create, Read, Update, Delete) completa, focando na arquitetura de serviços, componentização e manipulação de dados assíncronos com RxJS.",
+        tags: ["Angular", "TypeScript", "RxJS"],
+        liveUrl: "https://edson-memoteca.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/Angular/angular-memoteca",
     },
     {
         id: 1,
@@ -73,19 +84,6 @@ const p = [
         liveUrl: "https://edsoncarvalhointuria.github.io/typescript-pong/",
         githubUrl:
             "https://github.com/edsoncarvalhointuria/typescript-pong.git",
-    },
-    {
-        id: 1,
-        title: "Calculadora de Investimentos",
-        category: "javascript",
-        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755375774/calculadora-de-investimentos_gxwwdq.png",
-        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755375701/calculadora-de-investimentos-js_s2wdib.mp4",
-        description:
-            "Projeto desenvolvido no curso de JavaScript, uma ferramenta interativa que simula a progressão de investimentos com diferentes parâmetros.",
-        tags: ["Chart.js", "SASS", "Canvas"],
-        liveUrl: "https://fancy-kitsune-8c51a5.netlify.app/",
-        githubUrl:
-            "https://github.com/edsoncarvalhointuria/Projetos-Curso-HTML-CSS-JS/tree/main/calculadora-investimentos",
     },
     {
         id: 1,
@@ -123,6 +121,135 @@ const p = [
         tags: ["React", "SASS"],
         liveUrl: "https://edsoncarvalhointuria.github.io/portfolio-antigo/",
         githubUrl: "https://github.com/edsoncarvalhointuria/portfolio-antigo",
+    },
+    {
+        id: 1,
+        title: "Calculadora de Investimentos",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755375774/calculadora-de-investimentos_gxwwdq.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755375701/calculadora-de-investimentos-js_s2wdib.mp4",
+        description:
+            "Projeto desenvolvido no curso de JavaScript, uma ferramenta interativa que simula a progressão de investimentos com diferentes parâmetros.",
+        tags: ["Chart.js", "SASS", "Canvas"],
+        liveUrl: "https://fancy-kitsune-8c51a5.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Curso-HTML-CSS-JS/tree/main/calculadora-investimentos",
+    },
+    {
+        id: 1,
+        title: "Memorando",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755922112/memorando_qnt28q.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755922156/angular-memorando_Feito_com_o_Clipchamp_bwneq3.mp4",
+        description: `Este projeto é uma aplicação de lista de tarefas ("Memorando"), desenvolvido como um estudo aprofundado do framework Angular. Partindo da base de um projeto de curso, eu o refatorei significativamente para criar uma aplicação mais robusta e resiliente.
+
+O foco principal foi ir além do escopo original, implementando uma arquitetura de dados híbrida que garante o funcionamento da aplicação tanto online quanto offline, e aprimorando a experiência do usuário com a API de Animações do Angular e a gestão de estado reativo com RxJS.`,
+        tags: ["Angular", "TypeScript", "RxJS"],
+        liveUrl: "https://edson-memorando.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/Angular/angular-memorando",
+    },
+    {
+        id: 1,
+        title: "Lista de Compras",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755922366/lista-de-compras_tdk370.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755922423/angular-life-cycle_Feito_com_o_Clipchamp_xinsji.mp4",
+        description: `Este projeto é uma aplicação de lista de compras, desenvolvido como um estudo aprofundado para demonstrar o funcionamento do ciclo de vida dos componentes em Angular. O foco principal está na arquitetura do código-fonte e na observação de como o Angular gerencia a criação, atualização e destruição de componentes.`,
+        tags: ["Angular", "TypeScript", "RxJS"],
+        liveUrl: "https://edson-life-cycle.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/Angular/angular-life-cycle",
+    },
+    {
+        id: 1,
+        title: "Indexa",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755922785/indexa_zfw7kx.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755922819/angular-indexa_Feito_com_o_Clipchamp_hluwc3.mp4",
+        description: `Este projeto é uma aplicação de agenda de contatos ("Indexa"), desenvolvido como um estudo aprofundado para demonstrar a construção de uma aplicação Angular completa, do zero.
+
+O foco principal está na arquitetura do código-fonte e na implementação de funcionalidades complexas de frontend sem depender de um backend. A aplicação foi construída para explorar o ciclo de vida do Angular, a componentização e técnicas avançadas de armazenamento de dados no navegador.`,
+        tags: ["Angular", "TypeScript", "RxJS"],
+        liveUrl: "https://edson-indexa.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/Angular/angular-indexa",
+    },
+    {
+        id: 1,
+        title: "First App: Homes",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755923094/first-app_qrw2qg.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755923136/angular-first-app_Feito_com_o_Clipchamp_wgzngb.mp4",
+        description: `Este projeto é a implementação do tutorial oficial "First App" da documentação do Angular, uma aplicação para listagem e visualização de imóveis para aluguel.`,
+        tags: ["Angular", "TypeScript"],
+        liveUrl: "https://edson-first-app.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/Angular/angular-first-app",
+    },
+    {
+        id: 1,
+        title: "Buscante",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755923419/buscante_upx7u8.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755923450/angular-buscante_spwuxl.mp4",
+        description: `Este projeto é uma aplicação de busca de livros que consome a Google Books API, desenvolvido como um estudo aprofundado para demonstrar conceitos avançados de Angular. O projeto original, focado em programação reativa, foi refatorado para incluir uma camada completa de animações com a API de Animações do Angular.`,
+        tags: ["Angular", "TypeScript", "RxJS"],
+        liveUrl: "https://edson-buscante.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/Angular/angular-buscante",
+    },
+    {
+        id: 1,
+        title: "AluraBook",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755923672/alura-book_fuqedk.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755923709/angular-alura-book-form_apxko6.mp4",
+        description: `Este projeto é uma aplicação de formulário de cadastro, desenvolvido como um estudo aprofundado para demonstrar conceitos avançados de Formulários baseados em Templates (Template-Driven Forms) e validação de dados com Angular e TypeScript.`,
+        tags: ["Angular", "TypeScript", "RxJS"],
+        liveUrl: "https://edson-alura-book-form.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/Angular/angular-alura-book-form",
+    },
+    {
+        id: 1,
+        title: "ByteBank",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755923959/bytebank_nfrvka.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755923995/typescript-byte-bank_Feito_com_o_Clipchamp_bkrckl.mp4",
+        description: `Este projeto é uma simulação de uma aplicação de internet banking, desenvolvido como um estudo aprofundado para demonstrar conceitos avançados de TypeScript e arquitetura de software orientada a objetos.
+
+Embora a interface do usuário seja simples, o foco principal está na qualidade e na estrutura do código-fonte. A aplicação foi construída do zero, sem frameworks, para explorar e implementar padrões de design, decorators, tipagem forte e a organização do código em um cenário prático e funcional.`,
+        tags: ["TypeScript"],
+        liveUrl: "https://edson-byte-bank.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/TypeScript/typescript-byte-bank",
+    },
+    {
+        id: 1,
+        title: "Registrador de Negociações",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755924269/typescript-curso_nsoitm.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755924300/typescript-curso_Feito_com_o_Clipchamp_sq1sk2.mp4",
+        description: `Este projeto é uma aplicação para registrar negociações financeiras, desenvolvido como um estudo aprofundado para demonstrar conceitos avançados de TypeScript e arquitetura de software.
+
+Embora a interface do usuário seja simples, o foco principal está na qualidade e na estrutura do código-fonte. A aplicação foi construída do zero, sem frameworks, para explorar e implementar padrões de design como Model-View-Controller (MVC), decorators e tipagem forte em um cenário prático.`,
+        tags: ["TypeScript"],
+        liveUrl: "https://edson-typescript.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/TypeScript/typescript-curso",
+    },
+    {
+        id: 1,
+        title: "Fokus",
+        category: "javascript",
+        image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755924535/fokus_rylymu.png",
+        video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755924562/typescript-fokus_Feito_com_o_Clipchamp_qc5wby.mp4",
+        description: `Este projeto é uma aplicação de timer no estilo Pomodoro e gestão de tarefas, desenvolvido como um estudo aprofundado para demonstrar a migração de uma base de código de JavaScript vanilla para TypeScript.`,
+        tags: ["TypeScript"],
+        liveUrl: "https://edson-fokus.netlify.app/",
+        githubUrl:
+            "https://github.com/edsoncarvalhointuria/Projetos-Cursos-Alura/tree/main/TypeScript/typescript-fokus",
     },
 
     // === Python ===
@@ -198,7 +325,7 @@ const p = [
         image: "https://res.cloudinary.com/dbjobat5r/image/upload/v1755551526/site_comunidade_njclmh.png",
         video: "https://res.cloudinary.com/dbjobat5r/video/upload/f_auto,q_auto/v1755552124/site_comunidade_zvetnv.mp4",
         description:
-            "Este projeto é uma simulação de um blog , onde os usuários podem fazer postagens, editar seus próprios conteúdos e visualizar publicações de outros membros. O foco principal está no desenvolvimento backend utilizando Flask e o banco de dados SQLite.",
+            "Este projeto é uma simulação de um blog , onde os usuários podem fazer postagens, editar seus próprios conteúdos e visualizar publicações de outros membros. Como um dos meus primeiros projetos full-stack, o foco principal aqui foi a arquitetura do backend em Python. A interface foi construída para desktop, servindo como uma vitrine para a lógica de servidor e a manipulação de dados que acontecem nos bastidores.",
         tags: ["Flask", "SQLite", "Bootstrap"],
         liveUrl: "https://sitecomunidade-556i.onrender.com/",
         githubUrl:
