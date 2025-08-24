@@ -75,7 +75,7 @@ function FilterSelect({
     ];
 
     useEffect(() => {
-        if (getCookie("showHintFilters")) return;
+        // if (getCookie("showHintFilters")) return;
 
         setTimeout(() => {
             setCookie("showHintFilters", "true", 1);

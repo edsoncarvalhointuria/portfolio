@@ -81,8 +81,9 @@
             position: absolute;
             z-index: 30;
             height: 100dvh;
-            width: 100dvw;
-            transform: -50% -50%;
+            width: 200dvw;
+            left: 50%;
+            translate: -50% -0%;
             background-color: rgba(0, 0, 0, 0.8);
         }
     }
