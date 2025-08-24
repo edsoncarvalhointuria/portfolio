@@ -1,5 +1,5 @@
 import { motion, stagger, type Variants } from "framer-motion";
-import { useState, type RefObject } from "react";
+import { useState } from "react";
 import { useParticleContext } from "../../../contexts/ParticleContext";
 import type { ProjectCategory } from "../../../data/projects";
 import { isMobileDevice } from "../../../utils/device";
